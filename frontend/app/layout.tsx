@@ -14,7 +14,7 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "EduKit 🔥 | Starter Kit 💻",
+  title: "Bet-Narrative",
   description:
     "A starter kit for building (Dapps) on the Open Campus L3 (EduChain), powered by create-edu-dapp.",
 };
