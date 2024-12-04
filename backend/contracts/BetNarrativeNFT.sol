@@ -14,7 +14,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract BetNarrativeNFT is ERC721URIStorage, Ownable {
     uint256 private _tokenIdCounter;
 
-    constructor() ERC721("BetNarrativeNFT", "BetNarrativeNFT") Ownable(msg.sender) {
+    constructor() ERC721("BetNarrativeNFT", "BNT") Ownable(msg.sender) {
         _tokenIdCounter = 0;
     }
 
