@@ -45,7 +45,6 @@ const UserPage = () => {
 
     return (
       <div className="App min-h-screen flex flex-col items-center justify-between">
-        <Header />
         <div className="flex flex-col items-center justify-center flex-grow w-full mt-24 px-4">
           <Card className=" w-full max-w-2xl p-8 shadow-lg">
             <CardHeader>
