@@ -7,8 +7,7 @@ export default function Home() {
         BetNarratives <br /> AI Powered GameFI.
       </h2>
       <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-        Create immersive worlds, predict their twists, and earn rewards as you
-        shape the future of narratives.
+        Write to earn, bet to win. BetNarratives is a decentralized platform that allows you to create, bet on predicting next chapters, and earn on stories powered by AI
       </p>
     </BackgroundLines>
   );

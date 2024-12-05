@@ -1,5 +1,6 @@
 "use client";
 
+import CreateSellButton from "@/components/createSellButton";
 import CreateStoryButton from "@/components/CreateStoryButton";
 import {
   Modal,
@@ -88,11 +89,13 @@ const page = (props: Props) => {
                 <Button className="bg-red-500 hover:bg-red-600 mt-auto border-red-500 rounded-xl">
                   Sell
                 </Button>
+                
                 <Button className="bg-green-500 hover:bg-green-600 mt-auto border-green-500 rounded-xl">
                   View story
                 </Button>
               </div>
             </Card>
+            
           ))}
         </div>
       </div>

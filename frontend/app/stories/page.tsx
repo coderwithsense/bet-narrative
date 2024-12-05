@@ -129,9 +129,6 @@ const Marketplace = () => {
                 <CardDescription className="text-gray-300 mb-4">
                   {item.description}
                 </CardDescription>
-                <p className="text-lg font-bold mb-4 text-white">
-                  Price: {item.listedPrice} {item.currency}
-                </p>
                 <div className="owner-info flex items-center mb-4">
                   <img
                     src={item.ownerImage}
