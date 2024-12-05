@@ -1,20 +1,16 @@
 "use client";
 
+import { useCreatorStories } from "@/components/context/FlowContext";
+import SortaStoryV2 from "@/components/CreaterStoryButtonV2";
 import CreateSellButton from "@/components/createSellButton";
 import CreateStoryButton from "@/components/CreateStoryButton";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalTrigger,
-} from "@/components/ui/animated-modal";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import Form from "@/components/ui/Form";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Plus } from "lucide-react";
+import { redirect } from "next/navigation";
 import React from "react";
 
 type Props = {};
@@ -59,13 +55,15 @@ const CreatorStoriesCards = [
 ];
 
 const page = (props: Props) => {
+  const { stories } = useCreatorStories();
   return (
     <div>
-      <CreateStoryButton className="flex justify-end w-full" />
+      <SortaStoryV2 />
+      {/* <CreateStoryButton className="flex justify-end w-full" /> */}
       <TextHoverEffect text="Stories" />
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {CreatorStoriesCards.map((item, index) => (
+          {stories.map((item, index) => (
             <Card
               key={index}
               className="hover:border-r-4 bg-black hover:border-b-4 hover:border-green-500 p-4 rounded-lg transition-transform transform hover:scale-105 flex flex-col justify-between border"
@@ -86,16 +84,20 @@ const page = (props: Props) => {
                 </div>
               </div>
               <div className="flex justify-evenly w-full">
-                <Button className="bg-red-500 hover:bg-red-600 mt-auto border-red-500 rounded-xl">
+                <Button
+                  onClick={() =>
+                    (window.location.href = "/stories/my/AliceWonderland")
+                  }
+                  className="bg-red-500 hover:bg-red-600 mt-auto border-red-500 rounded-xl"
+                >
                   Sell
                 </Button>
-                
+
                 <Button className="bg-green-500 hover:bg-green-600 mt-auto border-green-500 rounded-xl">
                   View story
                 </Button>
               </div>
             </Card>
-            
           ))}
         </div>
       </div>

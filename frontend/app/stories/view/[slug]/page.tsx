@@ -45,22 +45,19 @@ export default async function Page({
             <button className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition">
               Buy Tokens
             </button>
-            <button className="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
-              Sell Tokens
-            </button>
           </div>
         </div>
       </div>
 
       {/* Header Section */}
       <div className="space-y-4">
-        <TextGenerateEffect words="Fairy Tale" />
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-white">
+        <TextGenerateEffect words="Alice's Adventures in Wonderland" />
+        {/* <h1 className="text-4xl font-bold text-gray-800 dark:text-white">
           {slug.replace("-", " ")}
-        </h1>
+        </h1> */}
         <p className="text-gray-600 dark:text-gray-400">
-          A magical journey through enchanted lands. Discover the mystery,
-          adventure, and secrets within this story.
+          A young girl named Alice falls through a rabbit hole into a fantasy
+          world.
         </p>
       </div>
 
