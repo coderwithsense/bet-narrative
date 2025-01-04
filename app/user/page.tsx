@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import LoginButton from "../../components/LoginButton";
 import Header from "@/components/Header";
+import { useUserDetailsContext } from "@/components/context/UserContext";
 
 interface DecodedToken {
   user_id: number;
@@ -27,6 +28,8 @@ interface DecodedToken {
 const UserPage = () => {
   const { authState } = useOCAuth();
   const router = useRouter();
+  // const { setUser, setUserAddress } =
+  // useUserDetailsContext();
 
   if (authState.error) {
     return (
@@ -41,6 +44,10 @@ const UserPage = () => {
 
     if (authState.idToken) {
       userInfo = jwtDecode<DecodedToken>(authState.idToken);
+      // setUser(userInfo.edu_username);
+      // setUserAddress(userInfo.eth_address);
+      console.log(`Set user: ${userInfo.edu_username}`);
+      console.log(`Set user address: ${userInfo.eth_address}`);
     }
 
     return (

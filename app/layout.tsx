@@ -12,6 +12,7 @@ import { Navbar } from "@/components/navbar";
 import { Providers } from "./providers";
 import { CreatorStoriesProvider } from "@/components/context/FlowContext";
 import CreatorStoriesWrapper from "./FlowProvider";
+import { UserDetailsContextProvider } from "@/components/context/UserContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,12 +45,14 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class" }}>
           <CreatorStoriesWrapper>
-            <div className="relative flex flex-col h-screen">
-              <Navbar />
-              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-                <OCIDProvider>{children}</OCIDProvider>
-              </main>
-            </div>
+            <UserDetailsContextProvider>
+              <div className="relative flex flex-col h-screen">
+                <Navbar />
+                <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+                  <OCIDProvider>{children}</OCIDProvider>
+                </main>
+              </div>
+            </UserDetailsContextProvider>
           </CreatorStoriesWrapper>
         </Providers>
       </body>
