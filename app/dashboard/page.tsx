@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,16 +12,6 @@ const Dashboard = () => {
   const truncateAddress = (address: String) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
-
-  // if (!user) {
-  //   return (
-  //     <div className="flex justify-center items-center h-screen">
-  //       <div className="bg-red-100 p-4 rounded-md shadow-md">
-  //         <p className="text-red-600">Error: User not found</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="p-6 max-w-6xl mx-auto space-y-6">

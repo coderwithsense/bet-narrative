@@ -11,10 +11,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import LoginButton from "../../components/LoginButton";
 import Header from "@/components/Header";
 import { useUserDetailsContext } from "@/components/context/UserContext";
 import { checkOrCreateUser } from "@/components/lib/Users";
+import LoginButton from "./LoginButton";
 
 interface DecodedToken {
   user_id: number;
@@ -27,7 +27,7 @@ interface DecodedToken {
   [key: string]: any;
 }
 
-const UserPage = () => {
+const User = () => {
   const { authState } = useOCAuth();
   const router = useRouter();
 
@@ -45,7 +45,7 @@ const UserPage = () => {
     if (authState.idToken) {
       userInfo = jwtDecode<DecodedToken>(authState.idToken);
       console.log(`Valid ID Token: ${authState.idToken}`);
-      // const user = checkOrCreateUser(userInfo);
+      const user = checkOrCreateUser(userInfo);
     }
 
     return (
@@ -118,4 +118,4 @@ const UserPage = () => {
   }
 };
 
-export default UserPage;
+export default User;
